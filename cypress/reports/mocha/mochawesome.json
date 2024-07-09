@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-07-09T23:53:05.207Z",
+    "end": "2024-07-09T23:53:16.389Z",
+    "duration": 11182,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1e054366-8de9-442f-9417-fd778f6d7f33",
+      "title": "",
+      "fullFile": "cypress\\e2e\\todo.cy.js",
+      "file": "cypress\\e2e\\todo.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a18f7fe2-5d57-4737-b802-92073416bc7a",
+          "title": "example to-do app",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "GIVEN navigating to the store WHEN I put a phone in the cart and click purchase THEN I have purchased a phone",
+              "fullTitle": "example to-do app GIVEN navigating to the store WHEN I put a phone in the cart and click purchase THEN I have purchased a phone",
+              "timedOut": null,
+              "duration": 3149,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\nlet title = 'Apple iPhone 12, 128GB, Black';\ncy.go_to_product_shop();\n// Act\ncy.find_phone_and_add_to_cart(title);\n// Assert\ncy.is_phone_in_cart(title);",
+              "err": {},
+              "uuid": "2260eb11-63d8-4fc9-bc5b-b51507d0e4c0",
+              "parentUUID": "a18f7fe2-5d57-4737-b802-92073416bc7a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "GIVEN navigating to the store WHEN I put a phone in the cart and click purchase THEN I have purchased a phone",
+              "fullTitle": "example to-do app GIVEN navigating to the store WHEN I put a phone in the cart and click purchase THEN I have purchased a phone",
+              "timedOut": null,
+              "duration": 1058,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\nlet title = 'Apple iPhone 12, 128GB, Black';\nlet target_message = 'Congrats! Your order of $905.99 has been registered!';\ncy.go_to_product_shop();\ncy.find_phone_and_add_to_cart(title);\n// Act\ncy.click_purchase();\n// Assert\ncy.get('#message').should('have.text', target_message);",
+              "err": {},
+              "uuid": "1d80482f-3ac8-49ab-893a-e2759c225de0",
+              "parentUUID": "a18f7fe2-5d57-4737-b802-92073416bc7a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fail on purpose",
+              "fullTitle": "example to-do app Fail on purpose",
+              "timedOut": null,
+              "duration": 4737,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\nlet title = 'Hello Nick!';\nlet target_message = 'Congrats! Your order of $905.99 has been registered!';\ncy.go_to_product_shop();\ncy.find_phone_and_add_to_cart(title);\n// Act\ncy.click_purchase();\n// Assert\ncy.get('#message').should('have.text', target_message);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Hello Nick!' within the element: <div.shop-item> and with the selector: '.shop-item-title' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Hello Nick!' within the element: <div.shop-item> and with the selector: '.shop-item-title' but never did.\n    at Context.eval (webpack:///./cypress/support/product_shop_com.js:3:25)",
+                "diff": null
+              },
+              "uuid": "04227a00-5fc0-4932-bf51-ae9de29d82ef",
+              "parentUUID": "a18f7fe2-5d57-4737-b802-92073416bc7a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2260eb11-63d8-4fc9-bc5b-b51507d0e4c0",
+            "1d80482f-3ac8-49ab-893a-e2759c225de0"
+          ],
+          "failures": [
+            "04227a00-5fc0-4932-bf51-ae9de29d82ef"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8944,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mocha",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
