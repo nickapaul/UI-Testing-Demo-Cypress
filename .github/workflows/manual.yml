@@ -1,18 +1,6 @@
 name: End-to-end tests
 on:
   workflow_dispatch:
-    # Inputs the workflow accepts.
-    inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
-        # Default value if no value is explicitly provided
-        default: 'World'
-        # Input has to be provided for the workflow to run
-        required: true
-        # The data type of the input
-        type: string
-
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
@@ -23,23 +11,23 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v6
+      - name: Archive Failure Screenshots 
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Screenshots
+          path: cypress/screenshots/todo.cy.js/*
+      - name: Archive Video 
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Video
+          path: cypress/videos/*
 
-  store-artifacts:
-    runs-on: ubuntu-22.04
-    steps:
-    - name: Archive Failure Screenshots 
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: Screenshots
-        path: cypress/screenshots/todo.cy.js/*
+ 
+    
 
-    - name: Archive Video 
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: Video
-        path: cypress/videos/*
+    
       
 
 
