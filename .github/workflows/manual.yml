@@ -1,4 +1,4 @@
-name: End-to-end tests
+name: UI Automation Pipeline Demo
 on:
   workflow_dispatch:
 permissions:
