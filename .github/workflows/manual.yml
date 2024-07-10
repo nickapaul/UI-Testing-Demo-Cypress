@@ -24,13 +24,10 @@ jobs:
           name: Video
           path: cypress/videos/*
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
+        uses: mikepenz/action-junit-report@v4
         if: always()
         with:
-          files: |
-            results/*.xml
-            results/*.trx
-            results/*.json
+          report_paths: 'test'
             
  
     
