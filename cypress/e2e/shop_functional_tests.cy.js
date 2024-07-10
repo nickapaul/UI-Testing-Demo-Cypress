@@ -5,7 +5,7 @@ describe('example to-do app', () => {
 
   })
 
-  it('GIVEN navigating to the store WHEN I put a phone in the cart and click purchase THEN I have purchased a phone', () => {
+  it('GIVEN navigating to the store WHEN I put a phone in the cart THEN I have a phone in my cart', () => {
     // Arrange
     let title = 'Apple iPhone 12, 128GB, Black'
     cy.go_to_product_shop()
@@ -18,7 +18,7 @@ describe('example to-do app', () => {
   })  
 
 
-  it('GIVEN navigating to the store WHEN I put a phone in the cart and click purchase THEN I have purchased a phone', () => {
+  it('GIVEN a phone in the cart WHEN I click purchase THEN I have purchased a phone', () => {
     // Arrange
     let title = 'Apple iPhone 12, 128GB, Black'
     let target_message = 'Congrats! Your order of $905.99 has been registered!'
