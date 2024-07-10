@@ -18,7 +18,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Screenshots
-          path: cypress/screenshots/todo.cy.js/*
+          path: cypress/screenshots/shop_functional_tests.cy.js/*
       - name: Archive Video 
         if: always()
         uses: actions/upload-artifact@v4
