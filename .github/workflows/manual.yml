@@ -1,8 +1,9 @@
 name: UI Automation Pipeline Demo
 on:
   workflow_dispatch:
-permissions:
+permissions:  
   checks: write
+  pull-requests: write
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
