@@ -1,4 +1,4 @@
-name: UI Automation Pipeline Demo
+name: End-to-end tests
 on:
   workflow_dispatch:
 permissions:
@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Install Dependencies
         run: npm install      
-      - name: Cypress run        
+      - name: Run Cypress Tests and Generate JUnit XML Report        
         run: npx cypress run --reporter junit --reporter-options "mochaFile=results/my-test-output.xml,toConsole=true"
       - name: Archive Failure Screenshots 
         if: always()
@@ -26,10 +26,13 @@ jobs:
           name: Video
           path: cypress/videos/*
       - name: Publish Test Results
-        uses: mikepenz/action-junit-report@v4
+        uses: EnricoMi/publish-unit-test-result-action@v2        
         if: always()
         with:
-          report_paths: 'results/*.xml'
+          files: |
+            results/*.xml
+            results/*.trx
+            results/*.json
             
  
     
