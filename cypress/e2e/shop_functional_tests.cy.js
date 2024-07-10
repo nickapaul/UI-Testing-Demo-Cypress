@@ -1,8 +1,7 @@
 
-describe('example to-do app', () => {
+describe('Shop Functional Tests', () => {
   beforeEach(() => {    
     cy.visit('https://qa-practice.netlify.app/')
-
   })
 
   it('GIVEN navigating to the store WHEN I put a phone in the cart THEN I have a phone in my cart', () => {
@@ -16,7 +15,6 @@ describe('example to-do app', () => {
     // Assert
     cy.is_phone_in_cart(title)
   })  
-
 
   it('GIVEN a phone in the cart WHEN I click purchase THEN I have purchased a phone', () => {
     // Arrange
