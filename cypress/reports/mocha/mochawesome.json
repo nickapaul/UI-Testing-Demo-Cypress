@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 1,
-    "start": "2024-07-09T23:53:05.207Z",
-    "end": "2024-07-09T23:53:16.389Z",
-    "duration": 11182,
+    "start": "2024-07-10T00:03:59.341Z",
+    "end": "2024-07-10T00:04:09.213Z",
+    "duration": 9872,
     "testsRegistered": 3,
     "passPercent": 66.66666666666666,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "1e054366-8de9-442f-9417-fd778f6d7f33",
+      "uuid": "6a000823-1f92-4667-a184-d07a719ed774",
       "title": "",
       "fullFile": "cypress\\e2e\\todo.cy.js",
       "file": "cypress\\e2e\\todo.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a18f7fe2-5d57-4737-b802-92073416bc7a",
+          "uuid": "ddc26e45-97fa-4ef6-9931-fe8cdcaade39",
           "title": "example to-do app",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "GIVEN navigating to the store WHEN I put a phone in the cart and click purchase THEN I have purchased a phone",
               "fullTitle": "example to-do app GIVEN navigating to the store WHEN I put a phone in the cart and click purchase THEN I have purchased a phone",
               "timedOut": null,
-              "duration": 3149,
+              "duration": 2352,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "// Arrange\nlet title = 'Apple iPhone 12, 128GB, Black';\ncy.go_to_product_shop();\n// Act\ncy.find_phone_and_add_to_cart(title);\n// Assert\ncy.is_phone_in_cart(title);",
               "err": {},
-              "uuid": "2260eb11-63d8-4fc9-bc5b-b51507d0e4c0",
-              "parentUUID": "a18f7fe2-5d57-4737-b802-92073416bc7a",
+              "uuid": "a29c6eae-03a7-4eb4-8df6-1d01a614dd47",
+              "parentUUID": "ddc26e45-97fa-4ef6-9931-fe8cdcaade39",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "GIVEN navigating to the store WHEN I put a phone in the cart and click purchase THEN I have purchased a phone",
               "fullTitle": "example to-do app GIVEN navigating to the store WHEN I put a phone in the cart and click purchase THEN I have purchased a phone",
               "timedOut": null,
-              "duration": 1058,
+              "duration": 700,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "// Arrange\nlet title = 'Apple iPhone 12, 128GB, Black';\nlet target_message = 'Congrats! Your order of $905.99 has been registered!';\ncy.go_to_product_shop();\ncy.find_phone_and_add_to_cart(title);\n// Act\ncy.click_purchase();\n// Assert\ncy.get('#message').should('have.text', target_message);",
               "err": {},
-              "uuid": "1d80482f-3ac8-49ab-893a-e2759c225de0",
-              "parentUUID": "a18f7fe2-5d57-4737-b802-92073416bc7a",
+              "uuid": "70c71a92-740e-4c4a-b1e7-59f28b3df6ce",
+              "parentUUID": "ddc26e45-97fa-4ef6-9931-fe8cdcaade39",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "Fail on purpose",
               "fullTitle": "example to-do app Fail on purpose",
               "timedOut": null,
-              "duration": 4737,
+              "duration": 4690,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -87,23 +87,23 @@
                 "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Hello Nick!' within the element: <div.shop-item> and with the selector: '.shop-item-title' but never did.\n    at Context.eval (webpack:///./cypress/support/product_shop_com.js:3:25)",
                 "diff": null
               },
-              "uuid": "04227a00-5fc0-4932-bf51-ae9de29d82ef",
-              "parentUUID": "a18f7fe2-5d57-4737-b802-92073416bc7a",
+              "uuid": "662aac63-26dc-4454-a51c-a4f6edf35135",
+              "parentUUID": "ddc26e45-97fa-4ef6-9931-fe8cdcaade39",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "2260eb11-63d8-4fc9-bc5b-b51507d0e4c0",
-            "1d80482f-3ac8-49ab-893a-e2759c225de0"
+            "a29c6eae-03a7-4eb4-8df6-1d01a614dd47",
+            "70c71a92-740e-4c4a-b1e7-59f28b3df6ce"
           ],
           "failures": [
-            "04227a00-5fc0-4932-bf51-ae9de29d82ef"
+            "662aac63-26dc-4454-a51c-a4f6edf35135"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 8944,
+          "duration": 7742,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -138,9 +138,9 @@
     "marge": {
       "options": {
         "reportDir": "cypress/reports/mocha",
-        "overwrite": false,
+        "overwrite": true,
         "html": false,
-        "json": true
+        "xml": true
       },
       "version": "6.2.0"
     }

@@ -9,9 +9,9 @@ module.exports = defineConfig({
         reporter: 'mochawesome',
         reporterOptions: {
           reportDir: 'cypress/reports/mocha',
-          overwrite: false,
-          html: false,
-          json: true
+          overwrite: true,
+          html: false,          
+          xml: true
         }
       };
       on('before:run', () => {
