@@ -24,12 +24,13 @@ jobs:
           name: Video
           path: cypress/videos/*
       - name: Publish Test Results
-        uses: dorny/test-reporter@v1
+        uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
-          name: JEST Tests            # Name of the check run which will be created
-          path: results/*.xml    # Path to test results
-          reporter: jest-junit
+          files: |
+            results/*.xml
+            results/*.trx
+            results/*.json
             
  
     
